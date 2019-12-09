@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">MasuKerja</string>
+    <string name="masukerja">MasuKerja</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="or">OR</string>
+    <string name="logout">Logout</string>
+    <string name="home">Home</string>
+    <string name="statistic">Statistic</string>
+    <string name="article">Article</string>
+    <string name="test">Test</string>
+    <string name="profile">Profile</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="generate">Generate</string>
+    <string name="forget_password">Lupa Password?</string>
+    <string name="no_account">Belum Punya Akun ?</string>
+    <string name="input_email">Masukkan Email Anda</string>
+    <string name="send">Kirim</string>
+    <string name="back">Kembali</string>
+    <string name="kode_otp">Kode OTP</string>
+    <string name="check_otp">Cek Email Anda Untuk Melihat Kode OTP</string>
+    <string name="new_password">Password Baru</string>
+    <string name="input_new_password">Masukkan Password Baru Anda</string>
+    <string name="save">Simpan</string>
+    <string name="send_email">Kirim Ulang Email ?</string>
+    <string name="_00_30">00:30</string>
+    <string name="have_account">Sudah Punya Akun?</string>
+    <string name="development">This application is still under development</string>
+    <string name="sorry">We\'re sorry.</string>
+    <string name="oops">Oops..</string>
+    <string name="hello">Hello</string>
+</resources>
