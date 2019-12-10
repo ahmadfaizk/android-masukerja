@@ -34,4 +34,7 @@
     <string name="sorry">We\'re sorry.</string>
     <string name="oops">Oops..</string>
     <string name="hello">Hello</string>
+    <string name="cari_pekeraan">Cari Pekeraan</string>
+    <string name="artikel_hari_ini">Artikel Hari Ini</string>
+    <string name="job_saved">Pekerjaan Yang Disimpan</string>
 </resources>

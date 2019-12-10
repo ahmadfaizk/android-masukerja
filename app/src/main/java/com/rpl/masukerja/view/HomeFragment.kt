@@ -39,7 +39,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        generate()
     }
 
     private fun generate() {
@@ -48,8 +47,8 @@ class HomeFragment : Fragment() {
         request.enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 if (response.isSuccessful) {
-                    tv_name.text = response.body()?.user?.name
-                    tv_email.text = response.body()?.user?.email
+//                    tv_name.text = response.body()?.user?.name
+//                    tv_email.text = response.body()?.user?.email
                 } else {
                     Log.d(TAG, response.message())
                 }

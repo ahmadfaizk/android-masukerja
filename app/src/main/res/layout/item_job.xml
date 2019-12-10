@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="16dp"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <ImageView
+            android:id="@+id/img_company"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            tools:background="@android:color/darker_gray" />
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Nama Pekerjaan"
+            android:layout_toEndOf="@id/img_company"
+            android:layout_toRightOf="@id/img_company" />
+        <TextView
+            android:id="@+id/tv_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Perusahaan"
+            android:layout_toEndOf="@id/img_company"
+            android:layout_toRightOf="@id/img_company"
+            android:layout_below="@id/tv_name" />
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lokasi"
+            android:layout_toRightOf="@id/img_company"
+            android:layout_toEndOf="@id/img_company"
+            android:layout_below="@id/tv_company"/>
+        <TextView
+            android:id="@+id/tv_salary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gaji"
+            android:layout_toEndOf="@id/img_company"
+            android:layout_toRightOf="@id/img_company"
+            android:layout_below="@id/tv_location" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
