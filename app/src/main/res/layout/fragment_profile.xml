@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context=".view.ProfileFragment">
-
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"

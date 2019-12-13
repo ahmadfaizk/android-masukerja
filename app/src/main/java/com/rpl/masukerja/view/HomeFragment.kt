@@ -2,6 +2,7 @@ package com.rpl.masukerja.view
 
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -23,7 +24,15 @@ import retrofit2.Response
 /**
  * A simple [Fragment] subclass.
  */
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), View.OnClickListener {
+    override fun onClick(v: View) {
+        when(v.id) {
+            R.id.btn_search -> {
+                val intent = Intent(this.context, SearchActivity::class.java)
+                startActivity(intent)
+            }
+        }
+    }
 
     companion object {
         internal val TAG = HomeFragment::class.java.simpleName
@@ -39,6 +48,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        btn_search.setOnClickListener(this)
     }
 
     private fun generate() {

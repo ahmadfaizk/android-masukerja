@@ -3,28 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="48dp"
     tools:context=".view.TestFragment">
-    <TextView
-        android:id="@+id/oops"
+    <Button
+        android:id="@+id/btn_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/oops"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:layout_centerInParent="true" />
-
-    <TextView
-        android:id="@+id/sorry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/oops"
-        android:text="@string/sorry" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sorry"
-        android:text="@string/development" />
+        android:layout_centerInParent="true"
+        android:text="Start" />
 </RelativeLayout>
