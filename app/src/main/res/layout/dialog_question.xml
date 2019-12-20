@@ -10,36 +10,43 @@
         android:weightSum="7"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/btn_question_1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="1" />
         <Button
+            android:id="@+id/btn_question_2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="2" />
         <Button
+            android:id="@+id/btn_question_3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="3" />
         <Button
+            android:id="@+id/btn_question_4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="4" />
         <Button
+            android:id="@+id/btn_question_5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="5" />
         <Button
+            android:id="@+id/btn_question_6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="6" />
         <Button
+            android:id="@+id/btn_question_7"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
