@@ -71,8 +71,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_gravity="center"
-            android:textColor="@color/colorPrimary"
-            android:background="@drawable/btn_rounded"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:backgroundTint="@android:color/white"
+            android:textColor="@color/colorPrimaryDark"
             android:text="@string/login" />
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -97,6 +98,15 @@
                 android:layout_marginStart="8dp" />
         </RelativeLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        android:layout_below="@id/container"
+        android:layout_centerHorizontal="true"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored" />
 
     <ProgressBar
         android:id="@+id/loading"

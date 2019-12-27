@@ -1,0 +1,50 @@
+<!--
+  ~ Copyright 2018 The app Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ListPreference
+        app:key="language"
+        app:defaultValue="english"
+        app:entries="@array/language_entries"
+        app:iconSpaceReserved="false"
+        app:entryValues="@array/language_values"
+        app:title="@string/language"
+        app:useSimpleSummaryProvider="true" />
+
+    <MultiSelectListPreference
+        app:key="source"
+        app:entries="@array/source_entries"
+        app:iconSpaceReserved="false"
+        app:entryValues="@array/source_values"
+        app:title="@string/search_source" />
+
+    <Preference
+        app:title="@string/help"
+        app:key="@string/help"
+        app:iconSpaceReserved="false"/>
+
+    <Preference
+        app:title="@string/about"
+        app:key="@string/about"
+        app:iconSpaceReserved="false" />
+
+    <Preference
+        app:title="@string/logout"
+        app:key="@string/logout"
+        app:iconSpaceReserved="false"/>
+
+</PreferenceScreen>

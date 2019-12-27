@@ -11,13 +11,18 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.TestActivity"></activity>
+        <activity
+            android:name=".view.SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
+        <activity android:name=".view.TestActivity" />
         <activity android:name=".view.JobActivity" />
         <activity android:name=".view.SearchActivity" />
         <activity
             android:name=".view.MainActivity"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".view.HomeActivity" />
+        <activity
+            android:name=".view.HomeActivity"
+            android:theme="@style/AppTheme3" />
         <activity
             android:name=".view.SplashActivity"
             android:theme="@style/AppTheme2">

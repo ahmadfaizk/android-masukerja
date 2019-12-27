@@ -1,0 +1,30 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="reply_entries">
+        <item>Reply</item>
+        <item>Reply to all</item>
+    </string-array>
+
+    <string-array name="reply_values">
+        <item>reply</item>
+        <item>reply_all</item>
+    </string-array>
+    <string-array name="language_entries">
+        <item>English</item>
+        <item>Bahasa Indonesia</item>
+    </string-array>
+    <string-array name="language_values">
+        <item>english</item>
+        <item>indonesia</item>
+    </string-array>
+    <string-array name="source_entries">
+        <item>Jobs.id</item>
+        <item>Jobstreet.com</item>
+        <item>Karir.com</item>
+    </string-array>
+    <string-array name="source_values">
+        <item>jobsid</item>
+        <item>jobstreet</item>
+        <item>karir</item>
+    </string-array>
+</resources>

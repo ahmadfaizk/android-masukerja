@@ -1,12 +1,16 @@
 package com.rpl.masukerja.view
 
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.os.Message
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 import com.rpl.masukerja.R
 import kotlinx.android.synthetic.main.fragment_test.*
@@ -32,9 +36,27 @@ class TestFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View) {
         when(v.id) {
             R.id.btn_start -> {
-                val intent = Intent(this.context, TestActivity::class.java)
-                startActivity(intent)
+                showGuide()
             }
         }
+    }
+
+    private fun showGuide() {
+        val builder = AlertDialog.Builder(this.requireContext())
+        builder.setTitle("Test Guide")
+        val dialogView = layoutInflater.inflate(R.layout.dialog_test_guide, null)
+        builder.setView(dialogView)
+        builder.setPositiveButton("Start", DialogInterface.OnClickListener{dialog, which ->
+            showToast("Start")
+        })
+        builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{dialog, which ->
+            dialog.cancel()
+            showToast("Cancel")
+        })
+        builder.create().show()
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this.requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 }
