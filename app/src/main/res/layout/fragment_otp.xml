@@ -52,39 +52,25 @@
                 android:id="@+id/tv_timer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="@string/_00_30"
                 android:textSize="16sp"
                 android:textColor="@android:color/white" />
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_send_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:text="@string/send_email"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:background="@color/colorPrimary" />
+                style="@style/TextButton" />
         </LinearLayout>
-        <Button
-            android:id="@+id/btn_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/back"
-            android:textColor="@color/colorPrimaryDark"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:backgroundTint="@android:color/white"
-            android:layout_marginTop="16dp" />
     </LinearLayout>
     <ProgressBar
         android:id="@+id/loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/container"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
         android:visibility="gone" />
 </RelativeLayout>

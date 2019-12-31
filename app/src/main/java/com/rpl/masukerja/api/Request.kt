@@ -1,8 +1,6 @@
 package com.rpl.masukerja.api
 
-import com.rpl.masukerja.api.response.LoginResponse
-import com.rpl.masukerja.api.response.MessageResponse
-import com.rpl.masukerja.api.response.UserResponse
+import com.rpl.masukerja.api.response.*
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -36,4 +34,24 @@ interface Request{
     fun changePassword(@Field("email") email: String,
                        @Field("password") password: String,
                        @Field("otp") otp: Int): Call<MessageResponse>
+
+    @FormUrlEncoded
+    @POST("job/search")
+    @Headers("Accept: application/json")
+    fun searchJob(@Header("Authorization") token: String,
+                  @Field("title") title: String?,
+                  @Field("salary") salary: Int?,
+                  @Field("location") location: String?,
+                  @Field("field") field: String?): Call<ListJobResponse>
+
+    @FormUrlEncoded
+    @POST("job/favorite")
+    fun setFavorite(@Header("Authorization") token: String,
+                    @Field("id_job") id: Int): Call<MessageResponse>
+
+    @GET("job/favorite")
+    fun getFavorite(@Header("Authorization") token: String): Call<ListJobResponse>
+
+    @GET("test")
+    fun getTest(@Header("Authorization") token: String): Call<TestResponse>
 }

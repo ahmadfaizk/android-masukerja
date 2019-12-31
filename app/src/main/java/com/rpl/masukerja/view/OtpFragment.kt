@@ -40,7 +40,6 @@ class OtpFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         email = OtpFragmentArgs.fromBundle(arguments as Bundle).email
-        btn_back.setOnClickListener(this)
         btn_send_email.setOnClickListener(this)
         otp_view.setOtpCompletionListener(object : OnOtpCompletionListener {
             override fun onOtpCompleted(otp: String?) {
@@ -54,9 +53,6 @@ class OtpFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.btn_back -> {
-                view?.findNavController()?.navigate(R.id.action_otpFragment_to_emailFragment)
-            }
             R.id.btn_send_email -> {
                 startTimer()
                 showLoading(true)

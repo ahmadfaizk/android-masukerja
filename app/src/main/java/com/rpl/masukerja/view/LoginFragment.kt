@@ -39,8 +39,8 @@ class LoginFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_login.setOnClickListener(this)
-        tv_register.setOnClickListener(this)
-        tv_forgot_password.setOnClickListener(this)
+        btn_register.setOnClickListener(this)
+        btn_forgot_password.setOnClickListener(this)
         btn_skip.setOnClickListener(this)
     }
 
@@ -49,10 +49,10 @@ class LoginFragment : Fragment(), View.OnClickListener {
             R.id.btn_login -> {
                 checkInput()
             }
-            R.id.tv_register -> {
+            R.id.btn_register -> {
                 this.view?.findNavController()?.navigate(R.id.action_loginFragment_to_registerFragment)
             }
-            R.id.tv_forgot_password -> {
+            R.id.btn_forgot_password -> {
                 view?.findNavController()?.navigate(R.id.action_loginFragment_to_emailFragment)
             }
             R.id.btn_skip -> {

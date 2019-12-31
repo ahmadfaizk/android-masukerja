@@ -74,6 +74,7 @@ class ProfileFragment : Fragment() {
         if (item.itemId == R.id.settings) {
             val setting = Intent(this.context, SettingsActivity::class.java)
             startActivity(setting)
+            return true
         }
         return super.onOptionsItemSelected(item)
     }

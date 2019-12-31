@@ -71,9 +71,18 @@
     <string name="test_guide_2">Jawablah pertanyaan tersebut dengan cepat, tidak perlu terlalu menganalisisnya. Beberapa mungkin membingungkan, namun pilihlah yang dirasa paling cocok untuk diri Anda.</string>
     <string name="test_guide_3">Jawablah pertanyaan tersebut apa adanya, sebagaimana diri Anda sebenarnya, bukan untuk menjadi sosok yang Anda inginkan terlihat oleh orang lain.</string>
     <string name="history">Riwayat</string>
-    <string name="job_name">Job Name</string>
     <string name="job_location">Job Location</string>
     <string name="job_field">Job Field</string>
     <string name="salary">Salary</string>
     <string name="search">Search</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="question">Question</string>
+    <string name="location">Location</string>
+    <string name="company_name">Company Name</string>
+    <string name="job_name">Job Name</string>
+    <string name="job_souce">Job Souce</string>
+    <string name="posting_date">Posting Date</string>
+    <string name="closing_date">Closing Date</string>
+    <string name="view_more">Lihat Selengkapnya...</string>
 </resources>

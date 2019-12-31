@@ -48,6 +48,7 @@ class TestFragment : Fragment(), View.OnClickListener {
         builder.setView(dialogView)
         builder.setPositiveButton("Start", DialogInterface.OnClickListener{dialog, which ->
             showToast("Start")
+            startActivity(Intent(this.requireContext(), TestActivity::class.java))
         })
         builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{dialog, which ->
             dialog.cancel()

@@ -37,7 +37,7 @@ class RegisterFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_register.setOnClickListener(this)
-        tv_login.setOnClickListener(this)
+        btn_login.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -45,7 +45,7 @@ class RegisterFragment : Fragment(), View.OnClickListener {
             R.id.btn_register -> {
                 checkInput()
             }
-            R.id.tv_login -> {
+            R.id.btn_login -> {
                 this.view?.findNavController()?.navigate(R.id.action_registerFragment_to_loginFragment)
             }
         }

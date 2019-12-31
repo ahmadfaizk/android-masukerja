@@ -33,7 +33,6 @@ class EmailFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btn_back.setOnClickListener(this)
         btn_send.setOnClickListener(this)
     }
 
@@ -41,9 +40,6 @@ class EmailFragment : Fragment(), View.OnClickListener {
         when (v.id) {
             R.id.btn_send -> {
                 checkInput()
-            }
-            R.id.btn_back -> {
-                view?.findNavController()?.navigate(R.id.action_emailFragment_to_loginFragment)
             }
         }
     }
