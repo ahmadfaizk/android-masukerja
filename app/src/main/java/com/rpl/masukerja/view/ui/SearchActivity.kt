@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.SeekBar
 import android.widget.Toast
 import com.rpl.masukerja.R
 import com.rpl.masukerja.api.ApiClient
 import com.rpl.masukerja.api.Request
 import com.rpl.masukerja.api.TokenPreference
+import com.rpl.masukerja.api.response.JobDataResponse
 import com.rpl.masukerja.api.response.ListJobResponse
 import com.rpl.masukerja.model.Job
 import com.rpl.masukerja.utils.RupiahFormatter
@@ -57,8 +59,9 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
                 salary = seekBar?.progress?.times(100000)!!
                 Toast.makeText(this@SearchActivity, "Salary $salary", Toast.LENGTH_SHORT).show()
             }
-
         })
+
+        loadJobData()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -78,9 +81,9 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun checkInput() {
-        var name: String? = null
-        var location: String? = null
-        var field: String? = null
+        var name: String?
+        var location: String?
+        var field: String?
 
         name = et_job_name.text.toString()
         location = et_job_location.text.toString()
@@ -104,9 +107,6 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun search(name: String?, location: String?, field: String?) {
         showLoading(true)
-//        val name = et_job_name.text.toString()
-//        val location = et_job_location.text.toString()
-//        val field  = et_job_field.text.toString()
         val token = TokenPreference(this).getToken()
         val request = ApiClient.retrofit.create(Request::class.java).searchJob("Bearer $token", name, salary, location, field)
         request.enqueue(object : Callback<ListJobResponse> {
@@ -126,6 +126,29 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
                     Toast.makeText(this@SearchActivity, "Request Timeout", Toast.LENGTH_SHORT).show()
                 }
                 showLoading(false)
+            }
+        })
+    }
+
+    private fun loadJobData() {
+        val token = TokenPreference(this).getToken()
+        val request = ApiClient.retrofit.create(Request::class.java).getJobData("Bearer $token")
+        request.enqueue(object : Callback<JobDataResponse> {
+            override fun onResponse(call: Call<JobDataResponse>, response: Response<JobDataResponse>) {
+                if (response.isSuccessful) {
+                    var fields = response.body()?.field as ArrayList<String>
+                    var locations = response.body()?.location as ArrayList<String>
+
+                    var fieldAdapter = ArrayAdapter(this@SearchActivity, android.R.layout.simple_list_item_1, fields)
+                    var locationAdapter = ArrayAdapter(this@SearchActivity, android.R.layout.simple_list_item_1, locations)
+
+                    et_job_field.setAdapter(fieldAdapter)
+                    et_job_location.setAdapter(locationAdapter)
+                }
+            }
+
+            override fun onFailure(call: Call<JobDataResponse>, t: Throwable) {
+                t.printStackTrace()
             }
         })
     }

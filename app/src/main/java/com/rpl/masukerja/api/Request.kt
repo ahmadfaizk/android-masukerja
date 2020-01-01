@@ -75,4 +75,7 @@ interface Request{
 
     @GET("job/statistic/field")
     fun getStatisticField(@Header("Authorization") token: String): Call<StatisticResponse>
+
+    @GET("job/data")
+    fun getJobData(@Header("Authorization") token: String): Call<JobDataResponse>
 }

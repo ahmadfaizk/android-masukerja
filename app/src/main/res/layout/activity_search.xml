@@ -45,7 +45,7 @@
                 android:layout_marginBottom="8dp"
                 app:hintEnabled="true">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <AutoCompleteTextView
                     android:id="@+id/et_job_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -58,7 +58,7 @@
                 android:layout_marginBottom="8dp"
                 app:hintEnabled="true">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <AutoCompleteTextView
                     android:id="@+id/et_job_field"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />

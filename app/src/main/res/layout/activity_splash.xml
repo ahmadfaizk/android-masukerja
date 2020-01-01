@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:text="@string/masukerja"
         android:textColor="@android:color/white"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/app_logo" />
 </RelativeLayout>
