@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
     android:padding="16dp"
-    tools:context=".view.OtpFragment">
+    tools:context=".view.ui.OtpFragment">
 
     <LinearLayout
         android:id="@+id/container"

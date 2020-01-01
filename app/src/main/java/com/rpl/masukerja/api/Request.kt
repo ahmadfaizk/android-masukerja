@@ -54,4 +54,22 @@ interface Request{
 
     @GET("test")
     fun getTest(@Header("Authorization") token: String): Call<TestResponse>
+
+    @GET("article")
+    fun getArticle(@Header("Authorization") token: String): Call<ArticleResponse>
+
+    @GET("test/show")
+    fun getTestHistory(@Header("Authorization") token: String): Call<ListTestResponse>
+
+    @FormUrlEncoded
+    @POST("test/store")
+    fun storeTest(@Header("Authorization") token: String,
+                  @Field("introvert") introvert: Int,
+                  @Field("extrovert") extrovert: Int,
+                  @Field("sensing") sensing: Int,
+                  @Field("intuiting") intuiting: Int,
+                  @Field("thingking") thingking: Int,
+                  @Field("feeling") feeling: Int,
+                  @Field("judging") judging: Int,
+                  @Field("perceiving") perceiving: Int): Call<TestResultResponse>
 }

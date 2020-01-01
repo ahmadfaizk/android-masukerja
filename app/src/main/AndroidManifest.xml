@@ -11,24 +11,27 @@
         android:roundIcon="@mipmap/icon_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.JobWebViewActivity"></activity>
-        <activity android:name=".view.JobDetailActivity" />
+        <activity android:name=".view.ui.ArticleDetailActivity"></activity>
+        <activity android:name=".view.ui.TestHistoryActivity" />
+        <activity android:name=".view.ui.TestResultActivity" />
+        <activity android:name=".view.ui.JobWebViewActivity" />
+        <activity android:name=".view.ui.JobDetailActivity" />
         <activity
-            android:name=".view.SettingsActivity"
+            android:name=".view.ui.SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity
-            android:name=".view.TestActivity"
+            android:name=".view.ui.TestActivity"
             android:theme="@style/AppTheme3" />
-        <activity android:name=".view.JobActivity" />
-        <activity android:name=".view.SearchActivity" />
+        <activity android:name=".view.ui.JobActivity" />
+        <activity android:name=".view.ui.SearchActivity" />
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.ui.MainActivity"
             android:theme="@style/AppTheme2" />
         <activity
-            android:name=".view.HomeActivity"
+            android:name=".view.ui.HomeActivity"
             android:theme="@style/AppTheme3" />
         <activity
-            android:name=".view.SplashActivity"
+            android:name=".view.ui.SplashActivity"
             android:theme="@style/AppTheme2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

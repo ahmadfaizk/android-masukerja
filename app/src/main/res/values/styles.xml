@@ -22,19 +22,6 @@
         <item name="colorAccent">@color/colorPrimaryDark</item>
     </style>
 
-    <style name="Material.Light" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="errorTextAppearance">@android:color/white</item>
-        <item name="hintTextAppearance">@android:color/white</item>
-        <item name="boxStrokeColor">@android:color/white</item>
-        <item name="android:textColorHint">@android:color/white</item>
-    </style>
-
-    <style name="MySeek" parent="Widget.AppCompat.SeekBar">
-        <item name="android:backgroundTint">@color/colorPrimaryLight</item>
-        <item name="android:progressTint">@color/colorPrimary</item>
-        <item name="android:colorControlActivated">@color/colorPrimaryDark</item>
-    </style>
-
     <style name="TextButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.Button</item>
@@ -46,15 +33,8 @@
         <item name="android:backgroundTint">@android:color/white</item>
     </style>
 
-    <style name="WhiteButton.Original" parent="Widget.AppCompat.Button.Colored">
-        <item name="android:backgroundTint">@color/colorPrimary</item>
-        <item name="android:textColor">@color/colorPrimaryDark</item>
-    </style>
-
-    <style name="OutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.Button</item>
-        <item name="android:textColor">@android:color/white</item>
-        <item name="strokeColor">@android:color/white</item>
-        <item name="android:layout_margin">4dp</item>
+    <style name="TestBar" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:minHeight">10dip</item>
+        <item name="android:maxHeight">20dip</item>
     </style>
 </resources>

@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
     android:padding="16dp"
-    tools:context=".view.EmailFragment">
+    tools:context=".view.ui.EmailFragment">
 
     <LinearLayout
         android:id="@+id/container"

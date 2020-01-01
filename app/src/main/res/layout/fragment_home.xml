@@ -7,7 +7,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".view.HomeFragment">
+        tools:context=".view.ui.HomeFragment">
 
         <RelativeLayout
             android:id="@+id/panel_search"

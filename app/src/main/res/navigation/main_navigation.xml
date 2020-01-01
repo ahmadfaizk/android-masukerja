@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.rpl.masukerja.view.LoginFragment"
+        android:name="com.rpl.masukerja.view.ui.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.rpl.masukerja.view.RegisterFragment"
+        android:name="com.rpl.masukerja.view.ui.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -33,12 +33,12 @@
     </fragment>
     <activity
         android:id="@+id/homeActivity"
-        android:name="com.rpl.masukerja.view.HomeActivity"
+        android:name="com.rpl.masukerja.view.ui.HomeActivity"
         android:label="activity_home"
         tools:layout="@layout/activity_home" />
     <fragment
         android:id="@+id/emailFragment"
-        android:name="com.rpl.masukerja.view.EmailFragment"
+        android:name="com.rpl.masukerja.view.ui.EmailFragment"
         android:label="fragment_email"
         tools:layout="@layout/fragment_email" >
         <action
@@ -50,7 +50,7 @@
     </fragment>
     <fragment
         android:id="@+id/otpFragment"
-        android:name="com.rpl.masukerja.view.OtpFragment"
+        android:name="com.rpl.masukerja.view.ui.OtpFragment"
         android:label="fragment_otp"
         tools:layout="@layout/fragment_otp" >
         <action
@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/passwordFragment"
-        android:name="com.rpl.masukerja.view.PasswordFragment"
+        android:name="com.rpl.masukerja.view.ui.PasswordFragment"
         android:label="fragment_password"
         tools:layout="@layout/fragment_password" >
         <action

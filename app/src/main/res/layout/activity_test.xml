@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.TestActivity">
+    tools:context=".view.ui.TestActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_question"
@@ -25,14 +25,13 @@
             android:layout_height="wrap_content"
             android:padding="8dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_number"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/colorPrimary"
+            <TextView
+                android:id="@+id/tv_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="No."
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
+                android:textStyle="bold"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tv_question"
@@ -40,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginBottom="16dp"
-                android:layout_toEndOf="@id/btn_number"
+                android:layout_toEndOf="@id/tv_number"
                 android:text="@string/question"
                 android:textSize="24sp" />
         </RelativeLayout>
@@ -48,7 +47,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_answer_1"
-        style="@style/Widget.MaterialComponents.Button"
+        style="@style/WhiteButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -57,8 +56,6 @@
         android:text="Jawaban 1"
         android:textAlignment="textStart"
         android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button"
-        android:backgroundTint="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv_question" />
@@ -79,6 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_answer_1" />
 
     <Button
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -91,6 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_answer_2" />
 
     <Button
+        android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
