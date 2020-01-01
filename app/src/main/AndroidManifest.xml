@@ -28,8 +28,7 @@
             android:name=".view.ui.MainActivity"
             android:theme="@style/AppTheme2" />
         <activity
-            android:name=".view.ui.HomeActivity"
-            android:theme="@style/AppTheme3" />
+            android:name=".view.ui.HomeActivity" />
         <activity
             android:name=".view.ui.SplashActivity"
             android:theme="@style/AppTheme2">
