@@ -203,6 +203,7 @@ class TestActivity : AppCompatActivity(), View.OnClickListener {
             dataTest = defferedTest.await()
             showMessage("Load DB Succes, Size: ${dataTest.size}")
             if (dataTest.size == 70) {
+                testHelper.deleteAll()
                 calculateTest()
                 showMessage("Caculate Test")
             }

@@ -14,8 +14,11 @@ import com.rpl.masukerja.R
 import com.rpl.masukerja.api.ApiClient
 import com.rpl.masukerja.api.Request
 import com.rpl.masukerja.api.TokenPreference
+import com.rpl.masukerja.api.response.ArticleResponse
 import com.rpl.masukerja.api.response.ListJobResponse
+import com.rpl.masukerja.model.Article
 import com.rpl.masukerja.model.Job
+import com.rpl.masukerja.view.adapter.ArticleAdapter
 import com.rpl.masukerja.view.adapter.JobAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
@@ -28,6 +31,7 @@ import retrofit2.Response
 class HomeFragment : Fragment(), View.OnClickListener {
 
     private lateinit var jobAdapter: JobAdapter
+    private lateinit var articleAdapter: ArticleAdapter
 
     companion object {
         internal val TAG = HomeFragment::class.java.simpleName
@@ -45,18 +49,30 @@ class HomeFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         jobAdapter = JobAdapter()
+        articleAdapter = ArticleAdapter()
 
         btn_search.setOnClickListener(this)
         rv_job_favorite.setHasFixedSize(true)
         rv_job_favorite.layoutManager = LinearLayoutManager(this.requireContext())
         rv_job_favorite.adapter = jobAdapter
 
+        rv_article_now.setHasFixedSize(true)
+        rv_article_now.layoutManager = LinearLayoutManager(this.requireContext())
+        rv_article_now.adapter = articleAdapter
+
         jobAdapter.setOnItemClickCallback(object : JobAdapter.OnItemClickCallback {
             override fun onItemClicked(job: Job) {
                 openDetail(job)
             }
         })
-        setFavorite()
+
+        articleAdapter.setOnItemClickCallback(object : ArticleAdapter.OnItemClickCallback {
+            override fun onItemClicked(article: Article) {
+                openArticle(article)
+            }
+        })
+        loadFavorite()
+        loadArticle()
     }
 
     override fun onClick(v: View) {
@@ -68,7 +84,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    private fun setFavorite() {
+    private fun loadFavorite() {
         val token = TokenPreference(this.requireContext()).getToken()
         val request = ApiClient.retrofit.create(Request::class.java).getFavorite("Bearer $token")
         request.enqueue(object : Callback<ListJobResponse> {
@@ -90,6 +106,28 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private fun openDetail(job: Job) {
         val intent = Intent(this.requireContext(), JobDetailActivity::class.java)
         intent.putExtra(JobDetailActivity.EXTRA_JOB, job)
+        startActivity(intent)
+    }
+
+    private fun loadArticle() {
+        val token = TokenPreference(this.requireContext()).getToken()
+        val request = ApiClient.retrofit.create(Request::class.java).getArticle("Bearer $token")
+        request.enqueue(object : Callback<ArticleResponse> {
+            override fun onResponse(call: Call<ArticleResponse>, response: Response<ArticleResponse>) {
+                if (response.isSuccessful) {
+                    val data = response.body()?.data
+                    articleAdapter.setData(data)
+                }
+            }
+            override fun onFailure(call: Call<ArticleResponse>, t: Throwable) {
+                t.printStackTrace()
+            }
+        })
+    }
+
+    private fun openArticle(article: Article) {
+        val intent = Intent(this.requireContext(), ArticleDetailActivity::class.java)
+        intent.putExtra(ArticleDetailActivity.EXTRA_ARTICLE, article)
         startActivity(intent)
     }
 }

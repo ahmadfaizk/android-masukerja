@@ -72,4 +72,7 @@ interface Request{
                   @Field("feeling") feeling: Int,
                   @Field("judging") judging: Int,
                   @Field("perceiving") perceiving: Int): Call<TestResultResponse>
+
+    @GET("job/statistic/field")
+    fun getStatisticField(@Header("Authorization") token: String): Call<StatisticResponse>
 }
