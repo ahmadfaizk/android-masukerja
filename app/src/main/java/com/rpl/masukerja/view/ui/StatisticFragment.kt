@@ -88,8 +88,8 @@ class StatisticFragment : Fragment() {
         data.setValueFormatter(PercentFormatter(data_chart))
         data.setValueTextSize(11f)
         data.setValueTextColor(Color.WHITE)
-
         data_chart.data = data
+        data_chart.animateXY(3000, 3000)
         data_chart.invalidate()
     }
 

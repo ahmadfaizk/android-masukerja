@@ -38,7 +38,7 @@ class ArticleDetailActivity : AppCompatActivity() {
         supportActionBar?.title = article.name
         tv_title.text = article.name
         tv_category.text = article.category
-        tv_date.text = article.date
+        tv_date.text = "Diposting pada ${article.date}"
         tv_description.text = article.description
     }
 }

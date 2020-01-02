@@ -17,23 +17,27 @@ class JobAdapter: RecyclerView.Adapter<JobAdapter.ViewHolder>() {
     private var onItemClickCallback: OnItemClickCallback? = null
     private val formatter = RupiahFormatter()
 
-    fun setJobs(listJob: ArrayList<Job>) {
-        this.listJob = listJob
+    fun setJobs(listJob: ArrayList<Job>?) {
+        if (listJob != null) {
+            this.listJob.clear()
+            this.listJob.addAll(listJob)
+        }
         notifyDataSetChanged()
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobAdapter.ViewHolder {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_job, parent, false)
         return ViewHolder(view)
     }
 
     override fun getItemCount(): Int = listJob.size
 
-    override fun onBindViewHolder(holder: JobAdapter.ViewHolder, position: Int) {
-        holder.bind(listJob[position])
-    }
-
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(listJob[position])
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {

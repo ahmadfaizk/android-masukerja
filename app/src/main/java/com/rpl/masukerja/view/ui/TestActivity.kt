@@ -94,7 +94,7 @@ class TestActivity : AppCompatActivity(), View.OnClickListener {
             override fun onResponse(call: Call<TestResponse>, response: Response<TestResponse>) {
                 if (response.isSuccessful) {
                     test = response.body()?.questions
-                    showMessage("Load Test Succes")
+                    //showMessage("Load Test Succes")
                     initView()
                 }
             }
@@ -147,7 +147,7 @@ class TestActivity : AppCompatActivity(), View.OnClickListener {
                 MappingHelper.mapCursorToList(cursor)
             }
             dataTest = defferedTest.await()
-            showMessage("Load DB Succes, Size: ${dataTest.size}")
+            //showMessage("Load DB Succes, Size: ${dataTest.size}")
             if (dataTest.size > 0) {
                 showDialog()
             }
@@ -166,7 +166,7 @@ class TestActivity : AppCompatActivity(), View.OnClickListener {
         } else {
             val update = testHelper.update(idQuestion.toString(), values)
             if (update > 0) {
-                showMessage("Sukses menupdate data")
+                //showMessage("Sukses menupdate data")
             } else {
                 Log.d(TAG, "Gagal Menyimpan data, Q: $idQuestion, A: $code")
             }
@@ -201,11 +201,11 @@ class TestActivity : AppCompatActivity(), View.OnClickListener {
                 MappingHelper.mapCursorToList(cursor)
             }
             dataTest = defferedTest.await()
-            showMessage("Load DB Succes, Size: ${dataTest.size}")
+            //showMessage("Load DB Succes, Size: ${dataTest.size}")
             if (dataTest.size == 70) {
                 testHelper.deleteAll()
                 calculateTest()
-                showMessage("Caculate Test")
+                //showMessage("Caculate Test")
             }
         }
     }
@@ -232,7 +232,7 @@ class TestActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun storeData() {
-        showMessage("Store Data")
+        //showMessage("Store Data")
         val token = TokenPreference(this).getToken()
         val request = ApiClient.retrofit.create(Request::class.java)
             .storeTest("Bearer $token", introvert, extrovert, sensing, intuiting, thingking, feeling, judging, perceiving)
@@ -243,6 +243,7 @@ class TestActivity : AppCompatActivity(), View.OnClickListener {
                     val intent = Intent(this@TestActivity, TestResultActivity::class.java)
                     intent.putExtra(TestResultActivity.EXTRA_RESULT, result)
                     startActivity(intent)
+                    this@TestActivity.finish()
                 }
                 showMessage("${response.code()} ${response.message()}")
             }

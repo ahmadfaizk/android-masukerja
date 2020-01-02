@@ -5,5 +5,5 @@ import com.rpl.masukerja.model.Job
 
 data class ListJobResponse(
     @SerializedName("data")
-    var jobs: List<Job>? = null
+    var jobs: ArrayList<Job>? = null
 )

@@ -107,7 +107,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_company"
-                tools:text="@tools:sample/lorem/random" />
+                tools:text="@tools:sample/lorem" />
 
             <TextView
                 android:id="@+id/tv_posting"
@@ -171,7 +171,7 @@
         android:id="@+id/btn_favorite"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_favorite_border_24dp"
+        android:src="@drawable/ic_favorite_24dp"
         android:backgroundTint="@color/colorPrimary"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"

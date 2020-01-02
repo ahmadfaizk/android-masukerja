@@ -37,7 +37,6 @@ class LoginFragment : Fragment(), View.OnClickListener {
         btn_login.setOnClickListener(this)
         btn_register.setOnClickListener(this)
         btn_forgot_password.setOnClickListener(this)
-        btn_skip.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -50,11 +49,6 @@ class LoginFragment : Fragment(), View.OnClickListener {
             }
             R.id.btn_forgot_password -> {
                 view?.findNavController()?.navigate(R.id.action_loginFragment_to_emailFragment)
-            }
-            R.id.btn_skip -> {
-                TokenPreference(requireContext()).setToken("xxx")
-                view?.findNavController()?.navigate(R.id.action_loginFragment_to_homeActivity)
-                this@LoginFragment.activity?.finish()
             }
         }
     }

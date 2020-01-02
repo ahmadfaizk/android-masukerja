@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.rpl.masukerja.R
@@ -68,6 +69,7 @@ class SettingsActivity : AppCompatActivity() {
 
         private fun logout() {
             TokenPreference(this.requireContext()).removeToken()
+            fragmentManager?.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
             startActivity(Intent(this.requireContext(), MainActivity::class.java))
         }
     }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,18 +9,54 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
-        <TextView
-            android:id="@+id/tv_job_count"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="16 Pekerjaan Ditemukan"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp">
+            <TextView
+                android:id="@+id/tv_job_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="0 Pekerjaan Ditemukan"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tv_page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Halaman 1 dari 20"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_jobs"
             android:layout_width="match_parent"
             android:nestedScrollingEnabled="false"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/item_job" />
+            tools:listitem="@layout/item_job"
+            tools:itemCount="2"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+            <Button
+                android:id="@+id/btn_prev"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:backgroundTint="@android:color/white"
+                android:drawableStart="@drawable/ic_navigate_before_24dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/back" />
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/white"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawableEnd="@drawable/ic_navigate_next_24dp"
+                android:layout_alignParentEnd="true"
+                android:text="@string/next" />
+        </RelativeLayout>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

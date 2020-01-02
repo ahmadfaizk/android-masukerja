@@ -39,10 +39,11 @@ interface Request{
     @POST("job/search")
     @Headers("Accept: application/json")
     fun searchJob(@Header("Authorization") token: String,
+                  @Query("page") page: Int?,
                   @Field("title") title: String?,
                   @Field("salary") salary: Int?,
                   @Field("location") location: String?,
-                  @Field("field") field: String?): Call<ListJobResponse>
+                  @Field("field") field: String?): Call<SearchResponse>
 
     @FormUrlEncoded
     @POST("job/favorite")

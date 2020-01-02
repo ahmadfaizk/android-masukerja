@@ -16,6 +16,7 @@ import com.rpl.masukerja.api.Request
 import com.rpl.masukerja.api.TokenPreference
 import com.rpl.masukerja.api.response.ArticleResponse
 import com.rpl.masukerja.api.response.ListJobResponse
+import com.rpl.masukerja.api.response.SearchResponse
 import com.rpl.masukerja.model.Article
 import com.rpl.masukerja.model.Job
 import com.rpl.masukerja.view.adapter.ArticleAdapter
@@ -91,8 +92,12 @@ class HomeFragment : Fragment(), View.OnClickListener {
             override fun onResponse(call: Call<ListJobResponse>, response: Response<ListJobResponse>) {
                 if (response.isSuccessful) {
                     val data = response.body()?.jobs as ArrayList<Job>
-                    jobAdapter.setJobs(data)
-                    Toast.makeText(this@HomeFragment.requireContext(), "Data Favorite Loaded", Toast.LENGTH_SHORT).show()
+                    if (data.isEmpty()) {
+                        tv_job_saved.text = "Anda Belum Menyimpan Pekerjaan"
+                    } else {
+                        tv_job_saved.text = "Pekerjaan Yang Disimpan"
+                        jobAdapter.setJobs(data)
+                    }
                 }
             }
 

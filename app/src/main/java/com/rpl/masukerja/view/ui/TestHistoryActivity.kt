@@ -3,6 +3,7 @@ package com.rpl.masukerja.view.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rpl.masukerja.R
 import com.rpl.masukerja.api.ApiClient
@@ -24,6 +25,9 @@ class TestHistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_history)
 
+        supportActionBar?.title = "Riwayat Tes"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         adapter = TestResultAdapter()
         rv_test_result.setHasFixedSize(true)
         rv_test_result.layoutManager = LinearLayoutManager(this)
@@ -38,6 +42,14 @@ class TestHistoryActivity : AppCompatActivity() {
         })
 
         loadData()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            onBackPressed()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun loadData() {

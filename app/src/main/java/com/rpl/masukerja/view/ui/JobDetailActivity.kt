@@ -62,7 +62,7 @@ class JobDetailActivity : AppCompatActivity(), View.OnClickListener {
         tv_location.text = job.location
         tv_salary.text = formatSalary(job.min_salary, job.max_salary)
         tv_job_description.text = job.description
-        tv_job_source.text = job.source
+        tv_job_source.text = "Sumber : ${job.source}"
         tv_posting_date.text = job.posting_date
         tv_closing_date.text = job.closing_date
     }

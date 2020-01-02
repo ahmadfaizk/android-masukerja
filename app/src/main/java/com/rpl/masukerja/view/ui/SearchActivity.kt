@@ -13,7 +13,7 @@ import com.rpl.masukerja.api.ApiClient
 import com.rpl.masukerja.api.Request
 import com.rpl.masukerja.api.TokenPreference
 import com.rpl.masukerja.api.response.JobDataResponse
-import com.rpl.masukerja.api.response.ListJobResponse
+import com.rpl.masukerja.api.response.SearchResponse
 import com.rpl.masukerja.model.Job
 import com.rpl.masukerja.utils.RupiahFormatter
 import kotlinx.android.synthetic.main.activity_search.*
@@ -38,7 +38,7 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
 
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
-        supportActionBar?.title = "Search Jobs"
+        supportActionBar?.title = "Mencari Pekerjaan"
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -108,19 +108,18 @@ class SearchActivity : AppCompatActivity(), View.OnClickListener {
     private fun search(name: String?, location: String?, field: String?) {
         showLoading(true)
         val token = TokenPreference(this).getToken()
-        val request = ApiClient.retrofit.create(Request::class.java).searchJob("Bearer $token", name, salary, location, field)
-        request.enqueue(object : Callback<ListJobResponse> {
-            override fun onResponse(call: Call<ListJobResponse>, responseList: Response<ListJobResponse>) {
+        val request = ApiClient.retrofit.create(Request::class.java).searchJob("Bearer $token", 1, name, salary, location, field)
+        request.enqueue(object : Callback<SearchResponse> {
+            override fun onResponse(call: Call<SearchResponse>, responseList: Response<SearchResponse>) {
                 if (responseList.isSuccessful) {
-                    val jobs = responseList.body()?.jobs
                     val intent = Intent(this@SearchActivity, JobActivity::class.java)
-                    intent.putParcelableArrayListExtra(JobActivity.EXTRA_JOBS, jobs as ArrayList<Job>)
+                    intent.putExtra(JobActivity.EXTRA_DATA, responseList.body())
                     startActivity(intent)
                 }
                 showLoading(false)
             }
 
-            override fun onFailure(call: Call<ListJobResponse>, t: Throwable) {
+            override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
                 t.printStackTrace()
                 if (t is SocketTimeoutException) {
                     Toast.makeText(this@SearchActivity, "Request Timeout", Toast.LENGTH_SHORT).show()

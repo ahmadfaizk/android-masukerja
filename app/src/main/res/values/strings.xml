@@ -3,15 +3,15 @@
     <string name="masukerja">MasuKerja</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="login">Login</string>
-    <string name="register">Register</string>
-    <string name="name">Name</string>
-    <string name="logout">Logout</string>
+    <string name="login">Masuk</string>
+    <string name="register">Daftar</string>
+    <string name="name">Nama</string>
+    <string name="logout">Keluar</string>
     <string name="home">Home</string>
-    <string name="statistic">Statistic</string>
-    <string name="article">Article</string>
-    <string name="test">Test</string>
-    <string name="profile">Profile</string>
+    <string name="statistic">Statistik</string>
+    <string name="article">Artikel</string>
+    <string name="test">Tes</string>
+    <string name="profile">Profil</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="forget_password">Lupa Password?</string>
@@ -25,45 +25,44 @@
     <string name="save">Simpan</string>
     <string name="send_email">Kirim Ulang Email ?</string>
     <string name="_00_30">00:30</string>
-    <string name="cari_pekeraan">Cari Pekeraan</string>
+    <string name="cari_pekeraan">Cari Pekerjaan</string>
     <string name="artikel_hari_ini">Artikel Hari Ini</string>
     <string name="job_saved">Pekerjaan Yang Disimpan</string>
     <string name="user_image">User Image</string>
-    <string name="settings">Settings</string>
-    <string name="title_activity_settings">Settings</string>
-    <string name="copyright">\u00a9 Copyright by MasuKerja Team | PENS</string>
+    <string name="settings">Pengaturan</string>
+    <string name="title_activity_settings">Pengaturan</string>
+    <string name="copyright">\u00a9 Copyright by G.E.I | PENS</string>
 
     <!-- Preference Titles -->
 
     <!-- Messages Preferences -->
 
     <!-- Sync Preferences -->
-    <string name="language">Language</string>
-    <string name="search_source">Search Source</string>
-    <string name="help">Help</string>
-    <string name="about">About</string>
+    <string name="language">Bahasa</string>
+    <string name="search_source">Sumber Pencarian</string>
+    <string name="help">Bantuan</string>
+    <string name="about">Tentang</string>
     <string name="version">Version 1.0</string>
     <string name="masukerja_email">masukerja@gmail.com</string>
     <string name="close_dialog">Close Dialog</string>
     <string name="test_description">Tes ini berujuan untuk mengetahui kerpribadian anda, supaya kami dapat merekomendasikan pekerjaan yang sesuai dengan anda</string>
-    <string name="start">Start</string>
+    <string name="start">Mulai</string>
     <string name="test_guide">Beberapa hal yang perlu diperhatikan untuk menyelesaikan tes ini :</string>
     <string name="test_guide_1">Tidak ada jawaban yang benar untuk setiap pertanyaan.</string>
     <string name="test_guide_2">Jawablah pertanyaan tersebut dengan cepat, tidak perlu terlalu menganalisisnya. Beberapa mungkin membingungkan, namun pilihlah yang dirasa paling cocok untuk diri Anda.</string>
     <string name="test_guide_3">Jawablah pertanyaan tersebut apa adanya, sebagaimana diri Anda sebenarnya, bukan untuk menjadi sosok yang Anda inginkan terlihat oleh orang lain.</string>
     <string name="history">Riwayat</string>
-    <string name="job_location">Job Location</string>
-    <string name="job_field">Job Field</string>
-    <string name="salary">Salary</string>
-    <string name="search">Search</string>
-    <string name="skip">Skip</string>
-    <string name="next">Next</string>
-    <string name="question">Question</string>
-    <string name="location">Location</string>
-    <string name="company_name">Company Name</string>
-    <string name="job_name">Job Name</string>
-    <string name="job_souce">Job Souce</string>
-    <string name="posting_date">Posting Date</string>
-    <string name="closing_date">Closing Date</string>
-    <string name="view_more">Lihat Selengkapnya...</string>
+    <string name="job_location">Lokasi</string>
+    <string name="job_field">Bidang Pekerjaan</string>
+    <string name="salary">Gaji</string>
+    <string name="search">Cari</string>
+    <string name="next">Selanjutnya</string>
+    <string name="question">Pertanyaan</string>
+    <string name="location">Lokasi</string>
+    <string name="company_name">Nama Perusahaan</string>
+    <string name="job_name">Nama Pekerjaan</string>
+    <string name="job_souce">Sumber</string>
+    <string name="posting_date">Diiklankan sejak</string>
+    <string name="closing_date">Ditutup pada</string>
+    <string name="view_more">Lamar Sekarang</string>
 </resources>
